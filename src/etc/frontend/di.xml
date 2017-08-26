@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+ * MIT License. See LICENSE for details.
+ * @author Simen Thorsrud <simen.thorsrud@gmail.com>
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="\Magento\Framework\View\DesignExceptions">
+        <plugin
+            name="HttpHeaderDesignExceptions"
+            type="\Siment\HttpHeaderThemeSwitch\Plugin\Magento\Framework\View\DesignExceptions"
+            sortOrder="1" />
+    </type>
+    <type name="\Siment\HttpHeaderThemeSwitch\Plugin\Magento\Framework\View\DesignExceptions">
+        <arguments>
+            <argument name="exceptionConfigPath" xsi:type="string">design/theme/ua_regexp</argument>
+            <argument name="scopeType" xsi:type="const">Magento\Store\Model\ScopeInterface::SCOPE_STORE</argument>
+        </arguments>
+    </type>
+</config>

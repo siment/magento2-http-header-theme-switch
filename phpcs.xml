@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+ * MIT License. See LICENSE for details.
+ * @author Simen Thorsrud <simen.thorsrud@gmail.com>
+-->
+<ruleset name="Siment_HttpHeaderThemeSwitch">
+    <description>The coding standard for Siment_HttpHeaderThemeSwitch</description>
+    <file>src/</file>
+    <file>Test/</file>
+    <arg name="extensions" value="php"/>
+    <rule ref="MEQP2" />
+</ruleset>

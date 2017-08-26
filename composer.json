@@ -1,0 +1,34 @@
+{
+    "name": "siment/module-http-header-theme-switch",
+    "description": "Magento 2 module that enables automatic theme switching based on the X-UA-Device HTTP header. (Or any other header)",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simen Thorsrud",
+            "email": "simen.thorsrud@gmail.com"
+        }
+    ],
+    "require": {
+        "magento/framework": "~100.1.0",
+        "magento/module-store": "~100.1.0"
+    },
+    "require-dev": {
+        "magento/marketplace-eqp": "~1.0",
+        "phpunit/phpunit": "~5.0.0",
+        "phpmd/phpmd": "~2.6"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": {
+            "Siment\\HttpHeaderThemeSwitch\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "vendor/bin/phpcs --config-set default_standard MEQP2",
+            "vendor/bin/phpcs --config-set installed_paths \"$(pwd)/vendor/magento/marketplace-eqp\"",
+            "vendor/bin/phpcs --config-set php7.0_path \"$(which php)\""
+        ]
+    }
+}

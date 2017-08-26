@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+ * MIT License. See LICENSE for details.
+ * @author Simen Thorsrud <simen.thorsrud@gmail.com>
+-->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.0/phpunit.xsd"
+         colors="true">
+    <testsuite name="Siment_HttpHeaderThemeSwitch Unit Tests">
+        <directory suffix="Test.php">Test/Unit</directory>
+    </testsuite>
+    <php>
+        <ini name="date.timezone" value="America/Los_Angeles"/>
+        <ini name="xdebug.max_nesting_level" value="200"/>
+    </php>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
