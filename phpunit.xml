@@ -1,7 +1,13 @@
 <?xml version="1.0"?>
 <!--
- * MIT License. See LICENSE for details.
- * @author Simen Thorsrud <simen.thorsrud@gmail.com>
+/**
+ * Licensed under Academic Free License ("AFL") v. 3.0
+ * See LICENSE.txt or https://opensource.org/licenses/afl-3.0
+ *
+ * @category    Siment_HttpHeaderThemeSwitch
+ * @copyright   (c) 2017 Simen Thorsrud
+ * @author      Simen Thorsrud <simen.thorsrud@gmail.com>
+ */
 -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.0/phpunit.xsd"

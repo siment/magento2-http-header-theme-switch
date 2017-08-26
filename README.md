@@ -45,8 +45,16 @@ Create an issue or a pull request.
  
 ## License 
 
-License is MIT, see LICENSE.
+ * Licensed under Academic Free License ("AFL") v. 3.0
+ * See LICENSE.txt or [https://opensource.org/licenses/afl-3.0](https://opensource.org/licenses/afl-3.0)
 
 ## How to install
 
-Coming...
+In Magento root:
+
+```bash
+$ composer config repositories.module-http-header-theme-switch git https://github.com/siment/module-http-header-theme-switch.git
+$ composer require siment/module-http-header-theme-switch
+$ php bin/magento module:enable Siment_HttpHeaderThemeSwitch
+$ php bin/magento cache:clean
+```

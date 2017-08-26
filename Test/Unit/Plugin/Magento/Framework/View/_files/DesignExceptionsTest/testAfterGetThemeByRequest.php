@@ -1,7 +1,11 @@
 <?php
 /**
- * MIT License. See LICENSE for details.
- * @author Simen Thorsrud <simen.thorsrud@gmail.com>
+ * Licensed under Academic Free License ("AFL") v. 3.0
+ * See LICENSE.txt or https://opensource.org/licenses/afl-3.0
+ *
+ * @category    Siment_HttpHeaderThemeSwitch
+ * @copyright   (c) 2017 Simen Thorsrud
+ * @author      Simen Thorsrud <simen.thorsrud@gmail.com>
  */
 
 return [
