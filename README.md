@@ -1,4 +1,4 @@
-# module-http-header-theme-switch
+# siment/module-http-header-theme-switch
 
 Magento 2 module that enables automatic theme switching based on X-UA-Device header.
 (Or any other header)
@@ -39,15 +39,6 @@ That is why I wanted to use the [Varnish Mobile Detect](https://github.com/wille
 module which sends the "X-UA-Device" header from Varnish for device detection 
 rather than tampering with the "User-Agent" header.
 
-## How to contribute
-
-Create an issue or a pull request.
- 
-## License 
-
- * Licensed under Academic Free License ("AFL") v. 3.0
- * See LICENSE.txt or [https://opensource.org/licenses/afl-3.0](https://opensource.org/licenses/afl-3.0)
-
 ## How to install
 
 In Magento root:
@@ -58,3 +49,27 @@ $ composer require siment/module-http-header-theme-switch
 $ php bin/magento module:enable Siment_HttpHeaderThemeSwitch
 $ php bin/magento cache:clean
 ```
+
+## How to test
+
+Make sure the Composer dependencies have been installed and that the "post-install-cmd" 
+scripts have executed.
+
+In module directory:
+
+```bash
+$ composer install
+$ composer run-script post-install-cmd          # May not be necessary
+$ vendor/bin/phpunit                            # For unit tests
+$ vendor/bin/phpcs                              # For code sniffs
+$ vendor/bin/phpmd src/,Test/ text phpmd.xml    # For mess detector
+```
+
+## How to contribute
+
+Create an issue or a pull request.
+ 
+## License 
+
+ * Licensed under Academic Free License ("AFL") v. 3.0
+ * See LICENSE.txt or [https://opensource.org/licenses/afl-3.0](https://opensource.org/licenses/afl-3.0)
