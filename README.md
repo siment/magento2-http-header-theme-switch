@@ -1,5 +1,12 @@
 # siment/module-http-header-theme-switch
 
+## Build status
+
+[![Build Status](https://travis-ci.org/siment/magento2-http-header-theme-switch.svg?branch=master)](https://travis-ci.org/siment/magento2-http-header-theme-switch)
+[![Code Climate](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/badges/gpa.svg)](https://codeclimate.com/github/siment/magento2-http-header-theme-switch)
+[![Test Coverage](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/badges/coverage.svg)](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/coverage)
+[![Issue Count](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/badges/issue_count.svg)](https://codeclimate.com/github/siment/magento2-http-header-theme-switch)
+
 Magento 2 module that enables automatic theme switching based on X-UA-Device header.
 (Or any other header)
 
