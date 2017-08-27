@@ -26,9 +26,10 @@ use \Siment\HttpHeaderThemeSwitch\Plugin\Magento\Framework\View\DesignExceptions
  */
 class DesignExceptionsTest extends \PHPUnit_Framework_TestCase
 {
-    const EXCEPTION_CONFIG_PATH = 'design/theme/ua_regexp';
-    const SCOPE_TYPE = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
-    const DEVICE_HEADER = 'HTTP_X_UA_DEVICE';
+    const EXCEPTION_CONFIG_PATH     = 'design/theme/ua_regexp';
+    const SCOPE_TYPE                = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
+    const XPATH_CONFIG_HTTP_HEADER  = 'default/siment_http_header_theme_switch/general/http_header';
+    const DEVICE_HEADER             = 'HTTP_X_UA_DEVICE';
 
     /**
      * @var ObjectManager
@@ -80,10 +81,17 @@ class DesignExceptionsTest extends \PHPUnit_Framework_TestCase
             ->getMock();
 
         if ($result === false) {
+            $scopeConfigMock
+                ->expects($this->at(0))
+                ->method('getValue')
+                ->with(self::XPATH_CONFIG_HTTP_HEADER)
+                ->willReturn(self::DEVICE_HEADER);
+
             if (!empty($deviceHeader)) {
                 $scopeConfigMock
-                    ->expects($this->once())
+                    ->expects($this->at(1))
                     ->method('getValue')
+                    ->with(self::EXCEPTION_CONFIG_PATH, self::SCOPE_TYPE)
                     ->willReturn($expressions);
             }
             $requestMock
@@ -112,7 +120,7 @@ class DesignExceptionsTest extends \PHPUnit_Framework_TestCase
                     'request'               => $requestMock,
                     'unserialize'           => $unserializeMock,
                     'exceptionConfigPath'   => self::EXCEPTION_CONFIG_PATH,
-                    'scopeType'             => self::DEVICE_HEADER
+                    'scopeType'             => self::SCOPE_TYPE
                 ]
             );
 

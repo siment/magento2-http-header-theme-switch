@@ -50,6 +50,19 @@ $ php bin/magento module:enable Siment_HttpHeaderThemeSwitch
 $ php bin/magento cache:clean
 ```
 
+## Configuration
+
+In Magento admin:
+
+**Stores** -> (Settings) **Configuration** -> **General** -> **Design** 
+-> **HTTP Header Theme Switch** -> **HTTP Header**:
+
+HTTP header which will be matched for theme exceptions in addition to the standard header "User-Agent".
+Standard value is "*HTTP_X_UA_DEVICE*"
+
+You define the matching rules under **Content** -> (Design) **Configuration** 
+-> (Select a theme) **Edit** -> **User Agent Rules**
+
 ## How to test
 
 Make sure the Composer dependencies have been installed and that the "post-install-cmd" 

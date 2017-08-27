@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+ * Licensed under Academic Free License ("AFL") v. 3.0
+ * See LICENSE.txt or https://opensource.org/licenses/afl-3.0
+ *
+ * @category    Siment_HttpHeaderThemeSwitch
+ * @copyright   (c) 2017 Simen Thorsrud
+ * @author      Simen Thorsrud <simen.thorsrud@gmail.com>
+-->
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <siment_http_header_theme_switch>
+            <general>
+                <http_header>HTTP_X_UA_DEVICE</http_header>
+            </general>
+        </siment_http_header_theme_switch>
+    </default>
+</config>

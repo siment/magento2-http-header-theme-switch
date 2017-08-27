@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+ * Licensed under Academic Free License ("AFL") v. 3.0
+ * See LICENSE.txt or https://opensource.org/licenses/afl-3.0
+ *
+ * @category    Siment_HttpHeaderThemeSwitch
+ * @copyright   (c) 2017 Simen Thorsrud
+ * @author      Simen Thorsrud <simen.thorsrud@gmail.com>
+-->
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="design">
+            <group
+                    id="http_header_theme_switch"
+                    translate="label"
+                    type="text"
+                    sortOrder="25"
+                    showInDefault="1"
+                    showInWebsite="1"
+                    showInStore="1">
+                <label>HTTP Header Theme Switch</label>
+                <field
+                        id="siment_http_header_theme_switch_http_header"
+                        translate="label comment"
+                        type="text"
+                        sortOrder="40"
+                        showInDefault="1"
+                        showInWebsite="1"
+                        showInStore="1"
+                        canRestore="1">
+                    <label>HTTP Header</label>
+                    <comment><![CDATA[HTTP header which will be matched for theme exceptions in
+addition to the standard header "User-Agent".<br /></br />You define the matching rules under <b>Content</b>
+-> (Design) <b>Configuration</b> -> (Select a theme) <b>Edit</b> -> <b>User Agent Rules</b>]]></comment>
+                    <config_path>siment_http_header_theme_switch/general/http_header</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -22,6 +22,7 @@ use \Magento\Framework\Unserialize\Unserialize;
  */
 class DesignExceptions
 {
+    const XPATH_CONFIG_HTTP_HEADER = 'default/siment_http_header_theme_switch/general/http_header';
 
     /**
      * @var ScopeConfigInterface|Config
@@ -77,10 +78,16 @@ class DesignExceptions
         $result
     ) {
         if ($result === false) {
-            $xUaDevice = $this->request->getServer('HTTP_X_UA_DEVICE');
+            /** @var string $httpHeader */
+            $httpHeader = $this->getHttpHeader();
+
+            /** @var string $xUaDevice */
+            $xUaDevice = $this->request->getServer($httpHeader);
             if (empty($xUaDevice)) {
                 return false;
             }
+
+            /** @var null|string $expressions Serialized string */
             $expressions = $this->scopeConfig->getValue(
                 $this->exceptionConfigPath,
                 $this->scopeType
@@ -88,7 +95,12 @@ class DesignExceptions
             if (!$expressions) {
                 return false;
             }
+
             $expressions = $this->unserialize->unserialize($expressions);
+            /**
+             * @var array   $expressions
+             * @var string  $rule
+             */
             foreach ($expressions as $rule) {
                 if (preg_match($rule['regexp'], $xUaDevice)) {
                     return $rule['value'];
@@ -96,5 +108,13 @@ class DesignExceptions
             }
         }
         return $result;
+    }
+
+    /**
+     * @return null|string
+     */
+    private function getHttpHeader()
+    {
+        return $this->scopeConfig->getValue(self::XPATH_CONFIG_HTTP_HEADER);
     }
 }
