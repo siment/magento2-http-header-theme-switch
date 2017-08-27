@@ -29,5 +29,11 @@
             "vendor/bin/phpcs --config-set default_standard MEQP2",
             "vendor/bin/phpcs --config-set installed_paths \"$(pwd)/vendor/magento/marketplace-eqp\""
         ]
+    },
+    "repositories": {
+        "magento": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
     }
 }
