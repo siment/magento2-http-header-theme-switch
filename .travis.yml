@@ -1,0 +1,20 @@
+language: php
+sudo: false
+cache:
+  directories:
+  - $COMPOSER_HOME
+php:
+    - 5.6
+    - 7.0
+install:
+    - echo -e '{\n    "http-basic": {\n        "repo.magento.com": {\n            "username": "'${MAGENTO_PUBLIC_KEY}'",\n            "password": "'${MAGENTO_PRIVATE_KEY}'"\n        }\n    }\n}' > $COMPOSER_HOME/auth.json
+    - composer install --prefer-dist
+    - composer run-script post-install-cmd
+script:
+    - php vendor/bin/phpunit
+    - php vendor/bin/phpcs
+    - php vendor/bin/phpmd src/,Test/ text phpmd.xml
+env:
+    global:
+        - secure: "hoWlmL78CZjtR1YbBt0H37y4uiLdYAAOR2+bkedp0CBUPglmKsnCUDf97AVlgR4Q7mDY5MQN9PHDsRRjsw0xZzsya2xUH+dA6ejuc1a87xYUPfyEseFGFDWPvcXxL5b9U2j5M66mq+FZLln1pw+RhJL7VjNGuXZDrqHATfTmFjyeSNlKCfZNuUmqKAyYi2yZFPiYZ2a2PJcFYTIBLocj4gSEmgK5u090R+r+wMhiliWtH3cTlBcMs9taWbB1FoThe8TJcoyD6Mssy5LeQXtZhOZR0ykEDjfDKzdaU/lZzr9nFEZr3EuM728J+SgTuJr4jbejyceB0t8/DR21wrPq2kbrG49liIFBjexVwiMbAv4+UvMc5PBR7U1FQLtHoRSm1rNSvIQ3++H66vdfBmIjrrwpY5zLXeFTxrr9LSI6wInD50Nmo/t2D0D4coLE8lq/ybZLuoLdgCB3qWWjV+G/CbN8z//0OQjTmLj1vNhxTzPd/aFQtZ8ochZNQdAkZvaVsGenmHXG+YVDN+IJF+BBDBZ9iMXcuxkaLi32QZL4LuJDuKvIN2kxxmt8nzyOBC1sUlLdYmXwU3h3mTZIABeVeIJO8JfpH3gi45rd/aCoCwIpo1pW1tObLHj21MIR6iU97RNnhvvt0or8tP+l2zzyRucBqQmKYVPtneetPGpjmlk="
+        - secure: "Q9ypYiAe8OpAvIU1PYC6wWbWIvYjFvmRAwTL8Xt6t7rOVhYQxc9EN1JAY8dxmA0S30inbZ3cdqJyXQQGLR9OM5hNlOZOXU+KcYuYUpob9zTlYfOjfFB08n6hd2fqil47jhGQ2/YX+8AUzpSi1f5p/XEpWIPcm4ozrARoQhl8fm56lHKa3CrahRqbjxyD0tVVj04aUQqRSJj6iahLujDCjFE/xCGZ7ak3wlzr0hLNJdO1RkuCYlgWZQJ0R/uW/wo2uCww9EFtvolje/jLapqYCn4XH5WIEXkG9gHZMCAEMCt63U0GMkMoYtmvmDb019cyLPfWZViA2dB8m4rlOhn/V9+39x5RjPRibyKHyq45qksi1L9TQu9fqo2/m4nRNUIzC5Ese4ZHMfAm9KyhTkcD7hFvTZWzb2B99TKOhNjaaExYPEbqMahacRnZnOYMYpRLa14pTRfa77tYx/0oAZY55vfjTNrpoK9R8G0Wvv0OxfUIR1aKCqZ9F5s6uE4LseFBRhbYZXqIGO4fvZeWDa118PRaC4OAjVSvaFUYhaZOniyUd5lodOeRdSiE7cykSSjMF/GBCHoli8xmOUxdYqbs2n3ftCDG2Nm7DTezRnTEuwXcZV/nMcMQEJMnNEt8+2UrwWfpwd1Q8HQ91ObYW6kSjvJR1G7ItrmiF1TJS3Mir58="
