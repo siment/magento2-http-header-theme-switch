@@ -44,7 +44,7 @@ rather than tampering with the "User-Agent" header.
 In Magento root:
 
 ```bash
-$ composer config repositories.module-http-header-theme-switch git https://github.com/siment/module-http-header-theme-switch.git
+$ composer config repositories.module-http-header-theme-switch git https://github.com/siment/magento2-http-header-theme-switch.git
 $ composer require siment/module-http-header-theme-switch
 $ php bin/magento module:enable Siment_HttpHeaderThemeSwitch
 $ php bin/magento cache:clean
