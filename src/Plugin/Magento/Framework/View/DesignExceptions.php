@@ -22,7 +22,7 @@ use \Magento\Framework\Unserialize\Unserialize;
  */
 class DesignExceptions
 {
-    const XPATH_CONFIG_HTTP_HEADER = 'default/siment_http_header_theme_switch/general/http_header';
+    const XPATH_CONFIG_HTTP_HEADER = 'siment_http_header_theme_switch/general/http_header';
 
     /**
      * @var ScopeConfigInterface|Config

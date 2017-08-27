@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/siment/magento2-http-header-theme-switch.svg?branch=master)](https://travis-ci.org/siment/magento2-http-header-theme-switch)
 [![Code Climate](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/badges/gpa.svg)](https://codeclimate.com/github/siment/magento2-http-header-theme-switch)
 [![Test Coverage](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/badges/coverage.svg)](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/coverage)
-[![Issue Count](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/badges/issue_count.svg)](https://codeclimate.com/github/siment/magento2-http-header-theme-switch)
+[![Issue Count](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/badges/issue_count.svg)](https://codeclimate.com/github/siment/magento2-http-header-theme-switch/issues)
 
 Magento 2 module that enables automatic theme switching based on X-UA-Device header.
 (Or any other header)
@@ -51,8 +51,7 @@ rather than tampering with the "User-Agent" header.
 In Magento root:
 
 ```bash
-$ composer config repositories.module-http-header-theme-switch git https://github.com/siment/magento2-http-header-theme-switch.git
-$ composer require siment/module-http-header-theme-switch
+$ composer require siment/module-http-header-theme-switch:"~1.0"
 $ php bin/magento module:enable Siment_HttpHeaderThemeSwitch
 $ php bin/magento cache:clean
 ```

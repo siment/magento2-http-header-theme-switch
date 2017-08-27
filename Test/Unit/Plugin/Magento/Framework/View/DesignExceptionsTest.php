@@ -110,8 +110,8 @@ class DesignExceptionsTest extends \PHPUnit_Framework_TestCase
             ->setMethods([])
             ->getMock();
 
-        /** @var DesignExceptionsPlugin $designExceptionsPlugin */
-        $designExceptionsPlugin = $this
+        /** @var DesignExceptionsPlugin $designExPl */
+        $designExPl = $this
             ->objectManager
             ->getObject(
                 DesignExceptionsPlugin::class,
@@ -131,7 +131,7 @@ class DesignExceptionsTest extends \PHPUnit_Framework_TestCase
                 ->willReturn($expressions);
         }
 
-        $actual = $designExceptionsPlugin->afterGetThemeByRequest(
+        $actual = $designExPl->afterGetThemeByRequest(
             $designExceptions,
             $result
         );
