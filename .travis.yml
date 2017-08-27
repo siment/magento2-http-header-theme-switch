@@ -7,7 +7,7 @@ php:
     - 5.6
     - 7.0
 install:
-    - echo -e "{\"http-basic\":{\"repo.magento.com\":{\"username\":\"${MAGENTO_PUBLIC_KEY}\",\"password\":\"${MAGENTO_PRIVATE_KEY}\"}}}" > $COMPOSER_HOME/auth.json
+    - echo "{\"http-basic\":{\"repo.magento.com\":{\"username\":\"${MAGENTO_PUBLIC_KEY}\",\"password\":\"${MAGENTO_PRIVATE_KEY}\"}}}" > $COMPOSER_HOME/auth.json
     - composer install --prefer-dist
     - composer run-script post-install-cmd
 script:
