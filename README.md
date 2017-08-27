@@ -92,4 +92,5 @@ Create an issue or a pull request.
 ## License 
 
  * Licensed under Academic Free License ("AFL") v. 3.0
- * See LICENSE.txt or [https://opensource.org/licenses/afl-3.0](https://opensource.org/licenses/afl-3.0)
+ * See [LICENSE.txt](https://raw.githubusercontent.com/siment/magento2-http-header-theme-switch/master/LICENSE.txt) 
+ or [https://opensource.org/licenses/afl-3.0](https://opensource.org/licenses/afl-3.0)
