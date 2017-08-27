@@ -2,7 +2,7 @@
     "name": "siment/module-http-header-theme-switch",
     "description": "Magento 2 module that enables automatic theme switching based on the X-UA-Device HTTP header. (Or any other header)",
     "type": "magento2-module",
-    "license": "MIT",
+    "license": "AFL-3.0",
     "authors": [
         {
             "name": "Simen Thorsrud",

@@ -88,6 +88,10 @@ $ vendor/bin/phpmd src/,Test/ text phpmd.xml    # For mess detector
 ## How to contribute
 
 Create an issue or a pull request.
+
+## Changelog
+
+See [CHANGELOG.md](https://github.com/siment/magento2-http-header-theme-switch/blob/master/CHANGELOG.md) 
  
 ## License 
 

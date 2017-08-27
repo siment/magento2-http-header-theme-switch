@@ -1,5 +1,10 @@
 # Changelog
 
+### 1.0.3
+
+1. Added link to CHANGELOG.md in README.md
+1. Updated license in `composer.json`
+
 ### 1.0.2
 
 1. Fixed version number typo in `module.xml`
