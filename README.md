@@ -22,8 +22,9 @@ headers than the pre-configured "X-UA-Device" header.
 
 ### Short version
 
-Because many web proxies, like [Varnish](https://varnish-cache.org/docs/trunk/users-guide/devicedetection.html), 
-uses the "X-UA-Device" header for device detection and Magento should respect it. 
+Because many web proxies, like [Varnish](https://varnish-cache.org), suggest to use the 
+"X-UA-Device" header for [device detection](https://varnish-cache.org/docs/trunk/users-guide/devicedetection.html) 
+and Magento should respect it. 
 
 ### Longer version
 

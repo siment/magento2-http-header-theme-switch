@@ -28,7 +28,7 @@ class DesignExceptionsTest extends \PHPUnit_Framework_TestCase
 {
     const EXCEPTION_CONFIG_PATH     = 'design/theme/ua_regexp';
     const SCOPE_TYPE                = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
-    const XPATH_CONFIG_HTTP_HEADER  = 'default/siment_http_header_theme_switch/general/http_header';
+    const XPATH_CONFIG_HTTP_HEADER  = 'siment_http_header_theme_switch/general/http_header';
     const DEVICE_HEADER             = 'HTTP_X_UA_DEVICE';
 
     /**
