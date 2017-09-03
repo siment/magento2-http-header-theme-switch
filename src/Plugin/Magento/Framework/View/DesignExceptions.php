@@ -15,6 +15,7 @@ use \Magento\Framework\App\Config\ScopeConfigInterface;
 use \Magento\Framework\App\RequestInterface;
 use \Magento\Framework\App\Request\Http as Request;
 use \Magento\Framework\Unserialize\Unserialize;
+use \Magento\Framework\View\DesignExceptions as ViewDesignExceptions;
 
 /**
  * Class DesignExceptions
@@ -25,30 +26,39 @@ class DesignExceptions
     const XPATH_CONFIG_HTTP_HEADER = 'siment_http_header_theme_switch/general/http_header';
 
     /**
-     * @var ScopeConfigInterface|Config
+     * @var ScopeConfigInterface|Config Allows fetching of Magento configuration
      */
     private $scopeConfig;
 
     /**
-     * @var RequestInterface|Request
+     * @var RequestInterface|Request Request object
      */
     private $request;
 
     /**
-     * @var Unserialize
+     * @var Unserialize Lets you safely unserialize strings
      */
     private $unserialize;
 
     /**
-     * @var string
+     * @var string Path to Magento configuration for design exceptions
      */
     private $exceptionConfigPath;
 
     /**
-     * @var string
+     * @var string Scope type. Defaults to "store"
      */
     private $scopeType;
 
+    /**
+     * DesignExceptions constructor.
+     *
+     * @param ScopeConfigInterface  $scopeConfig
+     * @param RequestInterface      $request
+     * @param Unserialize           $unserialize
+     * @param                       $exceptionConfigPath
+     * @param                       $scopeType
+     */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
         RequestInterface $request,
@@ -64,16 +74,17 @@ class DesignExceptions
     }
 
     /**
-     * After plugin for \Magento\Framework\View\DesignExceptions::getThemeByRequest
+     * After plugin for ViewDesignExceptions::getThemeByRequest
      *
-     * @param \Magento\Framework\View\DesignExceptions  $subject
-     * @param string|bool                               $result
-     * @see \Magento\Framework\View\DesignExceptions::getThemeByRequest
+     * @param ViewDesignExceptions  $subject
+     * @param string|bool                  $result
+     *
+     * @see ViewDesignExceptions::getThemeByRequest
      * @SuppressWarnings("unused")
+     *
      * @return string|bool
      */
-    // @codingStandardsIgnoreLine because of unused $subject
-    public function afterGetThemeByRequest(
+    public function afterGetThemeByRequest( // @codingStandardsIgnoreLine because of unused $subject
         \Magento\Framework\View\DesignExceptions $subject,
         $result
     ) {
@@ -111,6 +122,8 @@ class DesignExceptions
     }
 
     /**
+     * Returns identifier of HTTP header that we want to evaluate
+     *
      * @return null|string
      */
     private function getHttpHeader()

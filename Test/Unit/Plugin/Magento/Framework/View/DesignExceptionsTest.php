@@ -32,10 +32,13 @@ class DesignExceptionsTest extends \PHPUnit_Framework_TestCase
     const DEVICE_HEADER             = 'HTTP_X_UA_DEVICE';
 
     /**
-     * @var ObjectManager
+     * @var ObjectManager Allows initializing of objects in the context of Magento's dependency injection system
      */
     private $objectManager;
 
+    /**
+     * This runs before each test
+     */
     public function setUp()
     {
         $this->objectManager = new ObjectManager($this);
