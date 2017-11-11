@@ -1,8 +1,9 @@
 # Changelog
 
-### 1.0.5
+### 1.1.0
 
 1. Upgraded to PHPUnit 6 and introduced backwards compatability. Getting ready for Magento 2.2.
+1. Removing support for PHP 5.6
 
 ### 1.0.3
 
