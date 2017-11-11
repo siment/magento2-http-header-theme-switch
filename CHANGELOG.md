@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.0.5
+
+1. Upgraded to PHPUnit 6 and introduced backwards compatability. Getting ready for Magento 2.2.
+
 ### 1.0.3
 
 1. Added link to CHANGELOG.md in README.md
