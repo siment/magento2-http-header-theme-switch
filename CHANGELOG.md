@@ -4,6 +4,7 @@
 
 1. Upgraded to PHPUnit 6 and introduced backwards compatability. Getting ready for Magento 2.2.
 1. Removing support for PHP 5.6
+1. Added CI tests for PHP 7.1
 
 ### 1.0.3
 
