@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "magento/framework": "~100.1.0",
-        "magento/module-store": "~100.1.0"
+        "magento/framework": "^100.1.0 | ^101.0.0",
+        "magento/module-store": "^100.1.0 | ^100.2.0"
     },
     "require-dev": {
         "magento/marketplace-eqp": "~1.0",
